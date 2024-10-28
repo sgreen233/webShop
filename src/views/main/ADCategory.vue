@@ -4,7 +4,7 @@
 
 <template>
   <div>
-    <RouterView />
+    广告
   </div>
 </template>
 

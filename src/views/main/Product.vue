@@ -3,9 +3,7 @@
 </script>
 
 <template>
-  <div>
-    <RouterView />
-  </div>
+  <div>产品</div>
 </template>
 
 <style lang="scss" scoped></style>
