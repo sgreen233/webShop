@@ -34,7 +34,7 @@ export default {
     },
     getlist() {
       serviceAxios({
-        url: "room/getlist",
+        url: "/api/room/getlist",
         method: "get",
         data: null,
       }).then((res) => {
@@ -45,7 +45,7 @@ export default {
     },
     getroombooklist() {
       serviceAxios({
-        url: "room/getschedulelist",
+        url: "/api/room/getschedulelist",
         method: "get",
         data: null,
       }).then((res) => {
@@ -65,7 +65,7 @@ export default {
     },
     booClick() {
       serviceAxios({
-        url: "room/getscheduletime?roomNumber=" + this.roomlist[this.roomindex].roomNumber,
+        url: "/api/room/getscheduletime?roomNumber=" + this.roomlist[this.roomindex].roomNumber,
         method: "get",
         data: null,
       }).then((res) => {
@@ -119,7 +119,7 @@ export default {
       this.appointForm.roomNumber = this.roomlist[this.roomindex].roomNumber;
       console.log(this.appointForm)
       serviceAxios({
-        url: "room/addschedule",
+        url: "/api/room/addschedule",
         method: "post",
         data: this.appointForm,
       }).then((res) => {

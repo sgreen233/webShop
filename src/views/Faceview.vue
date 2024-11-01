@@ -131,12 +131,11 @@ export default {
                     };
 
                     _this.openCamera();
-
+                    setTimeout(this.updateMassage, 3000);
                 })
                 .catch((err) => {
                     console.log(err);
                 });
-            setTimeout(this.updateMassage, 3000);
         },
 
         de() {
@@ -159,7 +158,7 @@ export default {
         },
         aotulogin(){
             serviceAxios({
-                    url: "/user/login",
+                    url: "/api/user/login",
                     method: "post",
                     data: {
                         account: "814954582@qq.com",
@@ -169,13 +168,15 @@ export default {
                 }).then((res)=>{
                     this.logintoken = res.data.accessToken;
                     localStorage.setItem('logintoken', this.logintoken);
+                }).catch((err)=>{
+                    console.log(err);
                 })
         },
         sendImage() {
             if (this.img != null) {                
                 console.log(this.img);
                 serviceAxios({
-                    url: "/resource/upload",
+                    url: "/api/resource/upload",
                     method: "post",
                     data: {
                         file: this.img,
