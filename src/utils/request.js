@@ -24,7 +24,7 @@ serviceAxios.interceptors.request.use(
         config.headers["content-type"] = "multipart/form-data"; // post 请求
         //config.data = qs.stringify(config.data);
       } else {
-        config.headers["content-type"] = "multipart/form-data"; // 默认类型
+        config.headers["content-type"] = "none"; // 默认类型
       }
     }
     console.log("请求配置", config);
